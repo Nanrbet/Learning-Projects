@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/* || RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} img{
+    display: block; /* removes space under image (inline element) */
+     max-width: 100%; /* not overflow container */
+    height: auto;
+}
+
+:root {
+    /*COLORs*/
+    --BG-DARK: #2a3c55;
+    --BG-BLUE: #00537d;
+}
+/* || UTILITY */
+.nowrap {
+    white-space: nowrap;
+}
+
+/* || GENERAL STYLES */
+html {
+    scroll-behavior: smooth; }
+
+body {
+    font: 1.5rem "Nunito", sans-serif;
+    min-height: 100vh; /*always full height */
+
+    background-color: var(--BG-DARK); /*fallback color*/
+    background: radial-gradient( whitesmoke, var(--BG-BLUE));
+    display: flex;
+    flex-direction: column; /*stack header,main,footer*/
+}
+/* header, main, footer {
+    display: grid;
+    justify-content: center;
+    border: 2px solid saddlebrown;
+} FIRST DEC. */
+
+header, footer {
+    position: sticky;
+    background-color: var(--BG-DARK);
+    color: whitesmoke;
+    text-align: center;
+}
+header {
+    top: 0;
+}
+nav{
+    align-items: center;
+    grid-auto-flow: column;
+    border-bottom: 2px solid black;
+    background-color: whitesmoke;
+    
+    font-weight: bolder;
+    display: flex; /*different container*/
+    justify-content: space-evenly;
+    box-shadow: 0 12px 6px -5px var(--BG-DARK);
+
+} nav a, nav a:visited {
+    color: #333;
+} nav a:hover, nav a:focus {
+    color:hsla(0,0%,20%,0.6);
+} nav a:active {
+    color:hsla(243, 81%, 44%, 0.951);
+} 
+
+main{
+    flex-grow: 1; /*FILL OUT the page no matter what*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem
+
+}
+footer {
+    bottom: 0;
+}
+
+/* || PROFILE CARD */
+.card{
+    scroll-margin-top: 9rem; /*pushes down from the top so it doesn't scroll underneath the border*/
+    width: min(100%, 350px);
+    background-color: #cbd5e1;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+} .card figure{
+    display: flex;
+    flex-flow: column nowrap;
+} .card img {
+    background-color: #afafaf;
+    padding: 1rem;
+    /* border: 5px double#333; */
+    border-radius: 40%;
+
+    width: 100%;
+} .card figcaption {
+    font-weight: bolder;
+    font-size: 2rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+
+
+/* || SMALL */
+@media screen and (min-width: 576px){
+    main{
+        justify-content: center;
+        flex-flow: row wrap;
+        padding: 1rem;
+    }
+    .card {
+        width: min(100%, 400px);
+    }
+}
+@media screen and (max-width: 768px){
+    nav {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 1fr 1fr;
+        
+        padding-right: 1rem;
+    }
+    .card p {
+        font-size: large;
+    }
+}
+/* || VERY SMALL */
+@media screen and (max-width: 570px){
+    nav {
+        display: grid;
+        /* grid-auto-flow: column; DOESNT WORK*/
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+
+        padding-right: 1rem;
+    }.card{
+        scroll-margin-top: 13rem;}
+}
+
+
+/* || MEDIUM */
+@media screen and (min-width: 768px){
+    main{
+        justify-content: center;
+        flex-flow: row wrap;
+        padding: 1rem;
+    }
+    .card {
+        width: min(100%, 325px);
+    }.card figure{
+        flex-flow: column-reverse; /*justify the names to the top of image*/
+    }.card p {
+        margin-top: 1rem;
+    }
+}
+
+/* || LARGE */
+@media screen and (min-width: 992px){
+    .card {
+        width: min(100%, 400px);
+    }
+}
+
+/* || XL LARGE */
+@media screen and (min-width: 1288px){
+    .card {
+        width: min(calc(33% - 1rem)); /*So image not grow too large and blur*/
+    }
+}
+
+/* || MOBILE DEVICE LANDSCAPE */
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+    body {
+        background-color: dodgerblue;
+        background-image: radial-gradient(whitesmoke, dodgerblue);
+    }
+    
+    h1 {font-size: 1.5rem;}
+    main {
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: stretch;
+    }
+    .card {
+        width: min(calc(33% - 1rem), 200px); /*So image not grow too large and blur*/
+    }.card figcaption, .card p {
+        font-size: 1.25rem;
+    }
+}

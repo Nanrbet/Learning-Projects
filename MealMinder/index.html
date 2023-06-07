@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        MealMinder
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8754c0e377.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <!-- nav -->
+    <nav class="nav-bar">
+        <div class="nav-center">
+            <!-- Header -->
+            <div class="nav-header">
+                <a href="index.html" class="nav-logo">
+                    <div class="logo">
+                        <div>
+                            <i class="fa-solid fa-bowl-food"></i>
+                        </div>
+                        <div class="logo-meal-minder">
+                            <div class="logo-meal">MEAL</div>
+                            <div class="logo-minder">minder</div>
+                        </div>
+                    </div>
+                </a>
+
+                <button type="button" class="nav-btn btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+
+            <!-- Links -->
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="recipes.html" class="nav-link">recipes</a>
+                <a href="about.html" class="nav-link">about</a>
+
+                <div class="nav-link contact-link">
+                    <a href="contact.html" class="btn">contact</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!-- End of nav -->
+
+    <!-- Start of main -->
+    <main class="page">
+        
+        <!-- Search box and favorite meals container -->
+        <div class="card">
+            <div class="top">
+                <span class="light-dark-mode">
+                    <i class="fa-solid fa-sun"></i>
+                </span>
+                <span class="search-container">
+                    <input class="search-input" type="text" placeholder="Search meal...">
+                    <span class="search-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                </span>
+
+            </div>
+            <div class="fav-meals-container">
+                <h2>Favorite Meal(s)</h2>
+                <div class="fav-meals">
+                    <!-- Each favorite meal -->
+                    <div class="single">
+                        <!-- <figure class="img-container">
+                            <img src="http://unsplash.it/100/109" alt=" ">
+                        </figure>
+                        <figcaption class="text">
+                            <p>Meal yyyName</p>
+                        </figcaption>
+                        <i class="fa-solid fa-x"></i> -->
+                        
+                        <!-- New FAVORITE meal -->
+
+
+                    </div>
+                    <!-- End of each favorite meal -->
+                    
+                    
+                </div>
+            </div>
+
+            <!-- Random meals container-->
+            <div class="meals-container" title="Refresh the page to get a RANDOM MEAL">
+                <h2>Random meal</h2>
+                <div class="meal">
+                    <!-- <div class="meal-card">
+                        <figure class="meal-card-img-container">
+                            <img src="https://unsplash.it/300/300" alt="">
+                        </figure>
+                        <figcaption class="meal-name">
+                            <p>Random meal's Name</p>
+                            <i class="fa-regular fa-heart"></i>
+                        </figcaption>
+
+                    </div> -->
+                    
+                </div>
+            </div>
+        </div>
+        <!-- End of Search box and favorite meals container -->
+
+
+        <div class="pop-up-container">
+            <div class="pop-up">
+                <i class="fa-solid fa-x"></i>
+                <div class="pop-up-inner">
+                    <!-- <div class="left">
+                        <div class="meal-card">
+                            <div class="meal-card-img-container">
+                                <img src="https://unsplash.it/400/300" alt="">
+                            </div>
+                            <div class="meal-name">
+                                <p>Meal's Name</p>
+                                <i class="fa-regular fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div>
+                            <h2>Intructions</h2>
+                            <p class="meal-info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ratione voluptate voluptas perspiciatis hic, repudiandae laudantium cumque numquam placeat consequatur? Saepe voluptatibus, fugit neque provident ea harum repellendus atque vero commodi, expedita itaque officiis excepturi delectus.</p>
+                        </div>
+                        <div>
+                            <h2>Ingredients / Measures</h2>
+                            <ul>
+                                <li>Some Ingredient - Measure</li>
+                                <li>Some Ingredient - Measure</li>
+                                <li>Some Ingredient - Measure</li>
+                                <li>Some Ingredient - Measure</li>
+                                <li>Some Ingredient - Measure</li>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- End of main -->
+
+    <footer class="page-footer">
+        <p>
+            &copy; <span id="date">2023</span>
+            <span class="footer-logo">MealMinder</span>
+            Built by <a href="https:/www.Nanrbet.com">Nanribet F</a>.
+        </p>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
