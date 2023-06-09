@@ -785,15 +785,7 @@ About
 .team-card .container {
   height: 40%;
   padding: 0 16px;
-}
-.team-card .container {
-  padding: 0 16px;
-}
-
-.team-card .container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
+  display: grid;
 }
 
 .title {
