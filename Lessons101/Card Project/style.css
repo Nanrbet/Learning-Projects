@@ -34,11 +34,7 @@ body {
     display: flex;
     flex-direction: column; /*stack header,main,footer*/
 }
-/* header, main, footer {
-    display: grid;
-    justify-content: center;
-    border: 2px solid saddlebrown;
-} FIRST DEC. */
+
 
 header, footer {
     position: sticky;
@@ -73,6 +69,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
     padding: 1.5rem
 
@@ -93,6 +90,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-self: normal;
 
 } .card figure{
     display: flex;
