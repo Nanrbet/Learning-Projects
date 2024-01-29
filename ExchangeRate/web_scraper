@@ -1,0 +1,69 @@
+# A program that fetches the current exchange rate from Afri Change Exchange rate service
+
+import requests
+from bs4 import BeautifulSoup
+
+def get_naira_exchange_rate():
+    # Specify the URL of the website you want to scrape
+    afri_url = 'https://client.africhange.com/api/Rate?sendingCurrencyCode=CAD&receivingCurrencyCode=NGN'
+    Convera_url = 'https://blackbox.convera.com/api/currency/en-us/rate/CAD/NGN'
+
+    # Send an HTTP request to the URL
+    afri_response = requests.get(afri_url)
+    convera_response = requests.get(Convera_url)
+
+    # response = requests.post(post_url, data=payload)
+    # if (response.status_code == 200):
+    afri_response_data = afri_response.json()
+    convera_response_data = convera_response.json()
+  
+    # Check if the request was successful (status code 200)
+    if (afri_response.status_code == 200) and (convera_response.status_code == 200):
+        # # Parse the HTML content of the page using BeautifulSoup
+        # soup = BeautifulSoup(response.text, 'html.parser')
+
+        # # Identify the HTML elements containing the exchange rate information
+        # # Adjust these according to the structure of the website you are scraping
+        # exchange_rate_text = soup.find('span', {'class': 'base-text--size-small--bold'}).text
+
+        # # Extract the text content within the span tag
+        # # exchange_rate_text = exchange_rate_element.get_text()
+
+        # # Extract the numeric part (1,052.25) from the text content
+        # exchange_rate = exchange_rate_text.split()
+   
+
+        # Print the exchange rate
+        convera_value = convera_response_data[0].get('Rate')
+
+        for key, value in afri_response_data['data'].items():
+            # Check if the key is 'exchangeRate'
+            if key == 'exchangeRate':
+                # Print the exchange rate
+                afri_value =  value
+    else:
+        # If the request was not successful, print an error message
+        print(f"Error: Unable to retrieve data. Status code: {afri_response.status_code,convera_response.status_code}")
+    
+    return afri_value, convera_value
+
+if __name__ == "__main__":
+    # Call the function to get the latest Naira exchange rate form Afri exchange and convera respectively
+    n1, n2 = get_naira_exchange_rate()
+
+    if n1 and n2:
+        print("-"*36)
+        print(f"Latest Afri Change Naira Rate: {n1:.2f}")
+        print(f"Latest Convera Naira Rate: {n2:.2f}")
+        print("_-"*18)
+    else:
+        print("Failed to retrieve the exchange rate.")
+
+# pip install BeautifulSoup4
+# pip install requests
+# pip install -e scraping
+# Create a virtual environment (run this once)
+# python -m venv venv
+# Activate virtual environment
+# .\venv\Scripts\activate //WINDOWS
+# source ./venv/Scripts/activate //BASH
